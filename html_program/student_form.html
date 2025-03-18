@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Trainer App">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Nithin Neelakanta Rao">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Search App</title>
+    <style>
+        h2 {
+            font-family: Consolas, sans-serif;
+            text-align: center;
+            font-style: oblique;
+            color: brown;
+        }
+
+        label {
+            font-size: 20px;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .input {
+            width: 150px;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 2px;
+            border-radius: 3px;
+            height: 20px;
+            border: 1px solid brown;
+        }
+
+        div>div {
+            margin-bottom: 8px;
+        }
+
+        button {
+            margin-left: 110px;
+            background-color: yellow;
+            border: 1px solid brown;
+            height: 30px;
+            width: 100px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>User Login Page</h2>
+    <div>
+        <div>
+            <label for="username">Username</label>
+            <input class="input" type="text" id="username">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input class="input" type="password" id="password">
+        </div>
+    </div>
+    <button id="myButton" onclick="loginUser()">Submit</button>
+
+    <script>
+        function loginUser() {
+            let username = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            if (username.trim() === '') {
+                alert("Username cannot be empty");
+                return;
+            }
+            if (pass.trim() === "") {
+                alert("Password cannot be empty");
+                return;
+            }
+
+            let regex = /^[A-Za-z0-9._]{6,}$/; // Password: At least 6 chars, only letters, numbers, ".", and "_"
+
+            if (!regex.test(pass)) {
+                alert("Invalid password! It must be at least 6 characters long and contain only letters, numbers, '.', and '_'.");
+            } else {
+                alert("Login successful!");
+                console.log("It's working");
+            }
+
+        }
+    </script>
+</body>
+
+</html>
